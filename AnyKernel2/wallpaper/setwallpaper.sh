@@ -97,6 +97,30 @@ if [ $(getprop ro.product.device) == "bacon" ] || [ $(getprop ro.product.device)
 	chown system:system /data/system/users/0/wallpaper
 fi
 
+# ZENFONE 2 - USES SAME SCREEN RESOLUTION AS NEXUS 5
+
+if [ $(getprop ro.product.device) == "Z00A" ] || [ $(getprop ro.product.device) == "Z008" ]; then
+	cp /tmp/wallpaper/hammerheadwallpaper /data/system/users/0/wallpaper
+	chmod 777 /data/system/users/0/wallpaper
+	chown system:system /data/system/users/0/wallpaper
+fi
+
+# ZENFONE 2 - USES SAME SCREEN RESOLUTION AS NEXUS 5
+
+if [ $(getprop ro.product.device) == "Z00A" ]; then
+	cp /tmp/wallpaper/hammerheadwallpaper /data/system/users/0/wallpaper
+	chmod 777 /data/system/users/0/wallpaper
+	chown system:system /data/system/users/0/wallpaper
+fi
+
+# ZENFONE 2 ZE550ML
+
+if [ $(getprop ro.product.device) == "Z008" ]; then
+	cp /tmp/wallpaper/ze550 /data/system/users/0/wallpaper
+	chmod 777 /data/system/users/0/wallpaper
+	chown system:system /data/system/users/0/wallpaper
+fi
+
 # ALL OTHER DEVICES
 #dumpsys window displays | /tmp/busybox/grep/grep init  
 #dumpsys window | /tmp/busybox grep -i "Unrestricted"

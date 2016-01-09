@@ -4,18 +4,18 @@
 ## AnyKernel setup
 # EDIFY properties
 kernel.string="Nethunter kernel"
-do.devicecheck=1
+do.devicecheck=0
 do.initd=1
 do.modules=1
 do.cleanup=1
-device.name1=grouper
-device.name2=tilapia
+device.name1=Z00A
+device.name2=Z008
 device.name3=
 device.name4=
 device.name5=
 
 # shell variables
-block=/dev/block/mmcblk0p2;
+block=/dev/block/by-name/boot;
 
 ## end setup
 
