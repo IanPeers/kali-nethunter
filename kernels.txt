@@ -61,6 +61,7 @@ If you wish to add a kernel/new device, leave a link to source here and feel fre
 # git clone https://github.com/binkybear/AK-OnePone.git -b cm-12.1 oneplus12
 # git clone https://github.com/binkybear/AK-OnePone.git -b cm-13.0 oneplus13
 
+<<<<<<< HEAD
 # - Samsung Galaxy Note 3
 # TouchWiz
 # git clone https://github.com/jcadduono/idleKernel-note3.git -b ik-nethunter-touchwiz
@@ -72,7 +73,15 @@ If you wish to add a kernel/new device, leave a link to source here and feel fre
 # AOSP/CM
 # git clone https://github.com/jcadduono/nethunter_kernel_klte.git -b cm-12.1
 # git clone https://github.com/jcadduono/nethunter_kernel_klte.git -b cm-13.0
+=======
+# - Zenfone2
+# git clone https://github.com/Zenfone2-Dev/android_kernel_asus_moorefield.git -b cm-13.0
+>>>>>>> origin/master
 
 # - Toolchain
 # git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7
 # git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b lollipop-release
+<<<<<<< HEAD
+=======
+# git clone https://github.com/Zenfone2-Dev/x86_64-linux-linaro4.9.git
+>>>>>>> origin/master
