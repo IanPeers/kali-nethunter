@@ -34,6 +34,7 @@ KALIFS=$(ls $TMP/kalifs-*.tar.xz)
 	# Extract new chroot
 	print "Extracting Kali rootfs, this may take a while..."
 	tar -xJ -f "$KALIFS" -C "$NHSYS"
+	mv -f $NHSYS/kali-amd64 $NHSYS/kali-armhf
 	print "Kali chroot installed"
 
 	# We should remove the rootfs archive to free up device memory or storage space
