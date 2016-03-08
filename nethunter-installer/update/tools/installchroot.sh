@@ -26,13 +26,14 @@ KALIFS=$(ls $TMP/kalifs-*.tar.xz)
 	mkdir -p "$NHSYS"
 
 	# Remove previous chroot
-	[ -d "$NHSYS/kali-$ARCH" ] && {
+	[ -d "$NHSYS/kali-*" ] && {
 		print "Removing previous chroot..."
-		rm -rf "$NHSYS/kali-$ARCH"
+		rm -rf "$NHSYS/kali-*"
 	}
 
 	# Extract new chroot
 	print "Extracting Kali rootfs, this may take a while..."
+	rm -f $NHSYS/kali-armhf
 	tar -xJ -f "$KALIFS" -C "$NHSYS"
 	mv -f $NHSYS/kali-amd64 $NHSYS/kali-armhf
 	print "Kali chroot installed"
