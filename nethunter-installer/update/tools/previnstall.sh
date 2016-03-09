@@ -13,9 +13,9 @@ print() {
 	echo
 }
 
-NH=/data/local/kali-$ARCH
-NHAPP=/data/data/com.offsec.nethunter/files/chroot/kali-$ARCH
-NHSYS=/data/local/nhsystem/kali-$ARCH
+NH=/data/local/kali-*
+NHAPP=/data/data/com.offsec.nethunter/files/chroot/kali-*
+NHSYS=/data/local/nhsystem/kali-*
 
 # Fix for TWRP chasing symbolic links (mentioned by triryland)
 rm -rf "$NHSYS/dev/*"

@@ -66,7 +66,7 @@ mount /data
 }
 
 [ -d "/system/priv-app/NetHunter" ] && {
-	print "@Removing NetHunter.apk"
+	print "@Removing NetHunter apk"
 	rm -rf /system/priv-app/NetHunter
 }
 
@@ -74,6 +74,34 @@ mount /data
 	print "@Removing NetHunter chroot/data"
 	rm -rf /data/data/com.offsec.nethunter
 }
+
+[ -d "/data/local/nhsystem/kali-arm" ] && {
+	print "@Removing NetHunter chrootFS-arm"
+	rm -rf /data/local/nhsystem/kali-arm
+}
+
+[ -d "/data/local/nhsystem/kali-arm64" ] && {
+	print "@Removing NetHunter chrootFS-arm64"
+	rm -rf /data/local/nhsystem/kali-arm64
+}
+
+[ -d "/data/local/nhsystem/kali-i386" ] && {
+	print "@Removing NetHunter chrootFS-i386"
+	rm -rf /data/local/nhsystem/kali-i386
+}
+
+[ -d "/data/local/nhsystem/kali-amd64" ] && {
+	print "@Removing NetHunter chrootFS-amd64"
+	rm -rf /data/local/nhsystem/kali-amd64
+}
+
+[ -d "/data/local/nhsystem/kali-armhf" ] && {
+	print "@Removing NetHunter chrootFS-armhf"
+	rm -rf /data/local/nhsystem/kali-armhf
+}
+
+print "@Restoring bootanimation"
+cp -f /system/media/bootanimation.ziporg /system/media/bootanimation.zip
 
 cleanup
 print "@Uninstall complete"

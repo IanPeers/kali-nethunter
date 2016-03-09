@@ -33,10 +33,22 @@ KALIFS=$(ls $TMP/kalifs-*.tar.xz)
 
 	# Extract new chroot
 	print "Extracting Kali rootfs, this may take a while..."
-	rm -f $NHSYS/kali-armhf
+	rm -rf $NHSYS/kali-arm
+	rm -rf $NHSYS/kali-arm64
+	rm -rf $NHSYS/kali-armhf
+	rm -rf $NHSYS/kali-i386
+	rm -rf $NHSYS/kali-amd64
 	tar -xJ -f "$KALIFS" -C "$NHSYS"
-	mv -f $NHSYS/kali-amd64 $NHSYS/kali-armhf
 	print "Kali chroot installed"
+[ -d "$NHSYS/kali-amd64" ] && {
+	print "@Renaming kali-amd64 to kali-armhf"
+	mv -f $NHSYS/kali-amd64 $NHSYS/kali-armhf
+}
+
+[ -d "$NHSYS/kali-i386" ] && {
+	print "@Renaming kali-i386 to kali-armhf"
+	mv -f $NHSYS/kali-i386 $NHSYS/kali-armhf
+}
 
 	# We should remove the rootfs archive to free up device memory or storage space
 	rm -f "$KALIFS"

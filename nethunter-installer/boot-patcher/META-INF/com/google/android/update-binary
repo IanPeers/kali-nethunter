@@ -130,6 +130,12 @@ sh tools/cleansystem.sh
 	install "$LIBDIR"
 }
 
+[ -d "$tmp$LIB32" ] && {
+	print "Copying shared libraries and kernel modules to $LIB32"
+	setperm 0755 0755 "$tmp$LIB32"
+	install "$LIB32"
+}
+
 [ -d "$tmp/system/bin" ] && {
 	print "Installing /system/bin binaries"
 	setperm 0755 0755 "$tmp/system/bin"

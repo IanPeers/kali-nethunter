@@ -170,6 +170,7 @@ print "@Installing NetHunter wallpaper"
 sh wallpaper/setwallpaper.sh
 
 print "@Installing NetHunter boot animation"
+mv -f /system/media/bootanimation.zip /system/media/bootanimation.ziporg
 install "/system/media/bootanimation.zip"
 
 progress 0.7
@@ -190,6 +191,12 @@ progress 0.7
 	print "Copying shared libraries to $LIBDIR"
 	setperm 0755 0755 "$tmp$LIBDIR"
 	install "$LIBDIR"
+}
+
+[ -d "$tmp$LIB32" ] && {
+	print "Copying shared libraries to $LIB32"
+	setperm 0755 0755 "$tmp$LIB32"
+	install "$LIB32"
 }
 
 [ -d "$tmp/system/bin" ] && {
