@@ -26,29 +26,49 @@ KALIFS=$(ls $TMP/kalifs-*.tar.xz)
 	mkdir -p "$NHSYS"
 
 	# Remove previous chroot
-	[ -d "$NHSYS/kali-*" ] && {
-		print "Removing previous chroot..."
-		rm -rf "$NHSYS/kali-*"
+	[ -d "$NHSYS/kali-arm" ] && {
+		print "Removing previous chroot.arm..."
+		rm -rf "$NHSYS/kali-arm"
 	}
+
+	[ -d "$NHSYS/kali-arm64" ] && {
+		print "Removing previous chroot.arm64..."
+		rm -rf "$NHSYS/kali-arm64"
+	}
+
+	[ -d "$NHSYS/kali-armhf" ] && {
+		print "Removing previous chroot.armhf..."
+		rm -rf "$NHSYS/kali-armhf"
+	}
+
+	[ -d "$NHSYS/kali-i386" ] && {
+		print "Removing previous chroot.i386..."
+		rm -rf "$NHSYS/kali-i386"
+	}
+
+	[ -d "$NHSYS/kali-amd64" ] && {
+		print "Removing previous chroot.amd64..."
+		rm -rf "$NHSYS/kali-amd64"
+	}
+
 
 	# Extract new chroot
 	print "Extracting Kali rootfs, this may take a while..."
-	rm -rf $NHSYS/kali-arm
-	rm -rf $NHSYS/kali-arm64
-	rm -rf $NHSYS/kali-armhf
-	rm -rf $NHSYS/kali-i386
-	rm -rf $NHSYS/kali-amd64
+	[ -d "$NHSYS/kali-armhf" ] && {
+		print "Removing previous chroot.armhf..."
+		rm -rf "$NHSYS/kali-armhf"
+	}
 	tar -xJ -f "$KALIFS" -C "$NHSYS"
 	print "Kali chroot installed"
-[ -d "$NHSYS/kali-amd64" ] && {
+        [ -d "$NHSYS/kali-amd64" ] && {
 	print "@Renaming kali-amd64 to kali-armhf"
 	mv -f $NHSYS/kali-amd64 $NHSYS/kali-armhf
-}
+        }
 
-[ -d "$NHSYS/kali-i386" ] && {
+        [ -d "$NHSYS/kali-i386" ] && {
 	print "@Renaming kali-i386 to kali-armhf"
 	mv -f $NHSYS/kali-i386 $NHSYS/kali-armhf
-}
+        }
 
 	# We should remove the rootfs archive to free up device memory or storage space
 	rm -f "$KALIFS"

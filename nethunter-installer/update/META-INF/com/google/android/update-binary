@@ -246,6 +246,6 @@ cleanup
 print "************************************************"
 print "*       Kali NetHunter is now installed!       *"
 print "*  Please ignore any errors in TWRP regarding  *"
-print "*     /data/local/nhsystem/kali-$ARCH/dev/     *"
+print "*     /data/local/nhsystem/kali-armhf/dev/     *"
 print "************************************************"
 progress 1.0

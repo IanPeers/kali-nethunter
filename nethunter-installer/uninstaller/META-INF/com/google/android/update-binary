@@ -100,8 +100,18 @@ mount /data
 	rm -rf /data/local/nhsystem/kali-armhf
 }
 
+# Restoring bootanimation
+[ -f "/system/media/bootanimation.ziporg" ] && {
 print "@Restoring bootanimation"
-cp -f /system/media/bootanimation.ziporg /system/media/bootanimation.zip
+rm -f /system/media/bootanimation.zip
+mv -f /system/media/bootanimation.ziporg /system/media/bootanimation.zip
+}
+
+# Restoring boot image to boot block
+[ -f "/data/local/boot-backup.img" ] && {
+print "Restoring boot image..."
+dd if=/data/local/boot-backup.img of=/dev/block/by-name/boot
+}
 
 cleanup
 print "@Uninstall complete"
